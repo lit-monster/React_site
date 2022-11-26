@@ -4,9 +4,11 @@ import Products from './MainComponents/products';
 class Main extends React.Component {
   render() {
     return(
-      <div>
-        <Products />
-      </div>
+      <React.StrictMode>
+        <div>
+          <Products />
+        </div>
+      </React.StrictMode>
     );
   }
 }
