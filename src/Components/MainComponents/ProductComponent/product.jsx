@@ -1,14 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import image from './Images/item1.jpg';
-
 
 class Product extends React.Component {
     render() {
         return(
             <React.StrictMode>
                 <LIST>
-                    <img src = {image} alt="" />
+                    <img src = {this.props.image} alt="" />
                     <p>{this.props.name}</p>
                     <p>{this.props.price}</p>
                 </LIST>

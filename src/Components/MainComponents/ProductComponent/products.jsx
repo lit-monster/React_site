@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Product from './product';
+import {PRODUCTS} from './productsData';
+
 
 
 class Products extends React.Component {
@@ -8,45 +10,14 @@ class Products extends React.Component {
     return(
       <React.StrictMode>
         <LISTS>
-          <Product
-            name="プロダクトタイトル"
-            price="¥99,999 +tax"
-          />
-          <Product
-            name="プロダクトタイトル"
-            price="¥99,999 +tax"
-          />
-          <Product
-            name="プロダクトタイトル"
-            price="¥99,999 +tax"
-          />
-          <Product
-            name="プロダクトタイトル"
-            price="¥99,999 +tax"
-          />
-          <Product
-            name="プロダクトタイトル"
-            price="¥99,999 +tax"
-          />
-          <Product
-            name="プロダクトタイトル"
-            price="¥99,999 +tax"
-          />
-          <Product
-            name="プロダクトタイトル"
-            price="¥99,999 +tax"
-          />
-          <Product
-            name="プロダクトタイトル"
-            price="¥99,999 +tax"
-          />
+          {PRODUCTS.map((product)=>{
+            return <Product image={`${process.env.PUBLIC_URL}/images/${product.image}`} name={product.title} price={product.price} />
+          })}
         </LISTS>
       </React.StrictMode>
     );
   }
 }
-
-
 
 const LISTS = styled.ul`
   display: flex;
