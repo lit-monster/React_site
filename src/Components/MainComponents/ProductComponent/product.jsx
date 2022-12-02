@@ -1,14 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
 
 class Product extends React.Component {
     render() {
         return(
             <React.StrictMode>
                 <LIST>
-                    <img src = {this.props.image} alt="" />
-                    <p>{this.props.name}</p>
-                    <p>{this.props.price}</p>
+                    <Link to={'/product/' + this.props.id}>
+                        <img src = {this.props.image} alt="" />
+                        <p>{this.props.name}</p>
+                        <p>{this.props.price}</p>
+                    </Link>
                 </LIST>
             </React.StrictMode>
         );
@@ -25,6 +28,8 @@ const LIST = styled.li`
     }
     p {
         margin-bottom: 5px;
+        color: #333;
+        text-decoration: none;
     }
 `;
 

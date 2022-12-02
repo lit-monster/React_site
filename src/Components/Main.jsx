@@ -15,7 +15,7 @@ class Main extends React.Component {
           <BrowserRouter>
             <Switch>
               <Route exact path='/' component={Products} />
-              <Route exact path='/product/:id/info' component={Product} />
+              <Route exact path='/product/:id' component={Product} />
               <Route exact path='/about' component={About} />
               <Route exact path='/company' component={Company} />
             </Switch>
