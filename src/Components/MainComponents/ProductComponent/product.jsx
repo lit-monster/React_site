@@ -7,7 +7,7 @@ class Product extends React.Component {
         return(
             <React.StrictMode>
                 <LIST>
-                    <Link to={'/product/' + this.props.id}>
+                    <Link to={'/product/' + this.props.id} style={{ textDecoration: 'none' }}>
                         <img src = {this.props.image} alt="" />
                         <p>{this.props.name}</p>
                         <p>{this.props.price}</p>

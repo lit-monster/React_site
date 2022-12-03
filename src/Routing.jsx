@@ -15,7 +15,7 @@ class Routing extends React.Component {
                     <Route exact path='/about' component={About} />
                     <Route exact path='/company' component={Company} />
                 </Switch>
-          </BrowserRouter>
+            </BrowserRouter>
         );
     }
 }
