@@ -28,8 +28,7 @@ const LIST = styled.li`
     }
     p {
         margin-bottom: 5px;
-        color: #333;
-        text-decoration: none;
+        color: #333;       
     }
 `;
 

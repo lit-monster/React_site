@@ -7,6 +7,7 @@ class Products extends React.Component {
   render() {
     return(
       <React.StrictMode>
+        <TITLE>Products</TITLE>
         <LISTS>
           {PRODUCTS.map((product)=>{
             return <Product id={product.id} image={`${process.env.PUBLIC_URL}/images/${product.image}`} name={product.title} price={product.price} />
@@ -22,6 +23,12 @@ const LISTS = styled.ul`
   flex-wrap: wrap;
   justify-content: space-between;
   text-align: left;
+`;
+
+const TITLE = styled.h1`
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 30px;
 `;
 
 export default Products;
