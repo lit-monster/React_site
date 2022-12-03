@@ -32,3 +32,5 @@ const TITLE = styled.h1`
 `;
 
 export default Products;
+export {TITLE};
+

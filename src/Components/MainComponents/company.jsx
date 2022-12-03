@@ -1,12 +1,11 @@
 import React from 'react';
+import {TITLE} from './ProductComponent/products';
 
 class Company extends React.Component {
   render() {
     return(
       <React.StrictMode>
-        <div>
-          <h1>Company</h1>
-        </div>
+        <TITLE>Company</TITLE>
       </React.StrictMode>
     );
   }

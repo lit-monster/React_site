@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {PRODUCTS} from './productsData';
+import {TITLE} from './products';
 
 class ProductInfo extends React.Component {
   render() {
@@ -32,12 +33,6 @@ class ProductInfo extends React.Component {
 
 const Wrapper = styled.div`
   display: flex;
-`;
-
-const TITLE = styled.h1`
-  font-size: 14px;
-  font-weight: normal;
-  margin-bottom: 30px;
 `;
 
 const IMG = styled.img`
