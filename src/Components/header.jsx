@@ -9,7 +9,7 @@ class Header extends React.Component {
       <React.StrictMode>
         <Wrapper>
             <Link to={`/`} style={{textDecoration: 'none'}}>
-              <img src={logo} alt="Furniture Design" />
+              <Logo src={logo} alt="Furniture Design" />
             </Link>
             <Toggle>
               <span id="top-bar"></span>
@@ -44,6 +44,10 @@ const Wrapper = styled.header`
   }
 `;
 
+const Logo = styled.img`
+  width: 180px;
+`;
+
 const Toggle = styled.div`
   width: 30px;
   height: 30px;
@@ -76,7 +80,7 @@ const Mask = styled.div`
   z-index: 20;
   background-color: #000;
   opacity: .8;
-  display: block;
+  display: none;
   ul {
     position: absolute;
     top: 30px;
