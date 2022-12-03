@@ -1,20 +1,27 @@
 import React from 'react';
 import Header from './header';
-import Main from './Main';
 import Footer from './footer';
+import styled from 'styled-components';
+import {BrowserRouter} from 'react-router-dom';
+import Routing from '../Routing';
 
 class App extends React.Component {
   render() {
     return(
-      <React.StrictMode>
-        <div className="App">
-          <Header />
-          <Main />
-          <Footer />
-        </div>
-      </React.StrictMode>
+      <BrowserRouter>
+        <Header />
+        <Main>
+          <Routing></Routing>
+        </Main>
+        <Footer />
+      </BrowserRouter>
     );
   }
 }
+
+const Main = styled.div`
+  margin: 80px 40px;
+  padding: 0px 40px;
+`;
 
 export default App;

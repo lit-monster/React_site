@@ -1,29 +1,28 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import styled from 'styled-components';
-import logo from './Images/logo.svg'
+import logo from './Images/logo.svg';
 
 class Header extends React.Component {
   render() {
     return(
       <React.StrictMode>
         <Wrapper>
-          <h1>
-            <a href="product.html">
+            <Link to={`/`} style={{textDecoration: 'none'}}>
               <img src={logo} alt="Furniture Design" />
-            </a>
-          </h1>
-          <Toggle>
-            <span id="top-bar"></span>
-            <span id="bottom-bar"></span>
-          </Toggle>
-          <Mask>
-            <ul id="menu" class="SlideOut">
-              <li><a href="https://google.com">PRODUCTS</a></li>
-              <li><a href="https://google.com">ABOUT</a></li>
-              <li><a href="https://google.com">COMPANY</a></li>
-              <li><a href="mailto:shuto.1011@icloud.com">CONTACT</a></li>
-            </ul>
-          </Mask>
+            </Link>
+            <Toggle>
+              <span id="top-bar"></span>
+              <span id="bottom-bar"></span>
+            </Toggle>
+            <Mask>
+              <ul id="menu">
+                <li><Link to={`/`}>PRODUCTS</Link></li>
+                <li><Link to={`/about`}>ABOUT</Link></li>
+                <li><Link to={`/company`}>COMPANY</Link></li>
+                <li><a href="mailto:shuto.1011@icloud.com">CONTACT</a></li>
+              </ul>
+            </Mask>
         </Wrapper>
       </React.StrictMode>
     );
@@ -77,7 +76,7 @@ const Mask = styled.div`
   z-index: 20;
   background-color: #000;
   opacity: .8;
-  display: none;
+  display: block;
   ul {
     position: absolute;
     top: 30px;
