@@ -28,7 +28,7 @@ class Company extends React.Component {
         </dd>
       </Infomation>
       <Map>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.2914382280856!2d139.72342666557796!3d35.669825288204194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c820ac932eb%3A0xc68079dd10afd971!2z44CSMTA3LTAwNjIg5p2x5Lqs6YO95riv5Yy65Y2X6Z2S5bGx77yR5LiB55uu!5e0!3m2!1sja!2sjp!4v1611987713735!5m2!1sja!2sjp" title="map"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.2914382280856!2d139.72342666557796!3d35.669825288204194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c820ac932eb%3A0xc68079dd10afd971!2z44CSMTA3LTAwNjIg5p2x5Lqs6YO95riv5Yy65Y2X6Z2S5bGx77yR5LiB55uu!5e0!3m2!1sja!2sjp!4v1611987713735!5m2!1sja!2sjp" title="map"></iframe>
       </Map>
       </React.StrictMode>
     );
@@ -64,11 +64,15 @@ const Infomation = styled.dl`
 
 const Map = styled.div`
   width: 600px;
-  height: 305px;
+  height: 600px;
+  position: relative;
   iframe {
     width: 100%;
     height: 100%;
+    filter: grayscale(100%);
+    border-radius: 50%;
   }
 `;
+
 
 export default Company;
