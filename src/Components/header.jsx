@@ -4,25 +4,49 @@ import styled from 'styled-components';
 import logo from './Images/logo.svg';
 
 class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isMaskOpen : false
+    }
+  }
+
+  handleMaskOpen() {
+    this.setState({isMaskOpen: true});
+  }
+
+  handleMaskClose() {
+    this.setState({isMaskOpen: false});
+  }
+
   render() {
+    let MASK;
+    if (this.state.isMaskOpen) {
+      MASK = (
+        <Mask onClick={()=>{this.handleMaskClose()}}>
+          <ul id="menu">
+            <li><Link to={`/`}>PRODUCTS</Link></li>
+            <li><Link to={`/about`}>ABOUT</Link></li>
+            <li><Link to={`/company`}>COMPANY</Link></li>
+            <li><a href="mailto:shuto.1011@icloud.com">CONTACT</a></li>
+          </ul>
+        </Mask>
+      );
+    }
+
     return(
       <React.StrictMode>
         <Wrapper>
             <Link to={`/`} style={{textDecoration: 'none'}}>
               <Logo src={logo} alt="Furniture Design" />
             </Link>
-            <Toggle>
+            <Toggle onClick={()=>{
+              this.handleMaskOpen();
+            }}>
               <span id="top-bar"></span>
               <span id="bottom-bar"></span>
             </Toggle>
-            <Mask>
-              <ul id="menu">
-                <li><Link to={`/`}>PRODUCTS</Link></li>
-                <li><Link to={`/about`}>ABOUT</Link></li>
-                <li><Link to={`/company`}>COMPANY</Link></li>
-                <li><a href="mailto:shuto.1011@icloud.com">CONTACT</a></li>
-              </ul>
-            </Mask>
+            {MASK}
         </Wrapper>
       </React.StrictMode>
     );
@@ -80,7 +104,6 @@ const Mask = styled.div`
   z-index: 20;
   background-color: #000;
   opacity: .8;
-  display: none;
   ul {
     position: absolute;
     top: 30px;
