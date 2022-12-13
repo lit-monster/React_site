@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import logo from './Images/logo.svg';
+import { css } from "@emotion/react";
 
 class Header extends React.Component {
   constructor(props) {
@@ -11,19 +12,19 @@ class Header extends React.Component {
     }
   }
 
-  handleMaskOpen() {
-    this.setState({isMaskOpen: true});
-  }
-
-  handleMaskClose() {
-    this.setState({isMaskOpen: false});
+  handleMask() {
+    if (this.state.isMaskOpen) {
+      this.setState({isMaskOpen: false});
+    } else {
+      this.setState({isMaskOpen: true});
+    }
   }
 
   render() {
     let MASK;
     if (this.state.isMaskOpen) {
       MASK = (
-        <Mask onClick={()=>{this.handleMaskClose()}}>
+        <Mask onClick={()=>{this.handleMask()}}>
           <ul id="menu">
             <li><Link to={`/`}>PRODUCTS</Link></li>
             <li><Link to={`/about`}>ABOUT</Link></li>
@@ -33,7 +34,6 @@ class Header extends React.Component {
         </Mask>
       );
     }
-
     return(
       <React.StrictMode>
         <Wrapper>
@@ -41,9 +41,9 @@ class Header extends React.Component {
               <Logo src={logo} alt="Furniture Design" />
             </Link>
             <Toggle onClick={()=>{
-              this.handleMaskOpen();
+              this.handleMask();
             }}>
-              <span id="top-bar"></span>
+              <span id="top-bar" css={[style('#242424')]}></span>
               <span id="bottom-bar"></span>
             </Toggle>
             {MASK}
@@ -52,6 +52,12 @@ class Header extends React.Component {
     );
   }
 }
+
+const style = (color) => [
+  css`
+    color: ${color};
+  `
+];
 
 const Wrapper = styled.header`
     height: 80px;
@@ -83,7 +89,7 @@ const Toggle = styled.div`
     position: absolute;
     top: 10px;
     transition: all 0.5s;
-    background-color: #242424;
+    
   }
   #bottom-bar{
     width: 100%;
@@ -91,7 +97,7 @@ const Toggle = styled.div`
     position: absolute;
     top: 20px;
     transition: all 0.5s;
-    background-color: #242424;
+    
   }
 `;
 
