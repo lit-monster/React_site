@@ -43,8 +43,8 @@ class Header extends React.Component {
             <Toggle onClick={()=>{
               this.handleMask();
             }}>
-              <span id="top-bar" css={[style('#242424')]}></span>
-              <span id="bottom-bar"></span>
+              <span id="top-bar" css={style}></span>
+              <span id="bottom-bar" css={style}></span>
             </Toggle>
             {MASK}
         </Wrapper>
@@ -53,11 +53,9 @@ class Header extends React.Component {
   }
 }
 
-const style = (color) => [
-  css`
-    color: ${color};
-  `
-];
+const style = css`
+  backgroundColor: red;
+`;
 
 const Wrapper = styled.header`
     height: 80px;
@@ -89,7 +87,7 @@ const Toggle = styled.div`
     position: absolute;
     top: 10px;
     transition: all 0.5s;
-    
+    background-color: #fff;
   }
   #bottom-bar{
     width: 100%;
@@ -97,7 +95,7 @@ const Toggle = styled.div`
     position: absolute;
     top: 20px;
     transition: all 0.5s;
-    
+    background-color: #fff;
   }
 `;
 
