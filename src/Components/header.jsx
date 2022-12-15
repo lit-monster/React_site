@@ -33,15 +33,14 @@ class Header extends React.Component {
         </Mask>
       );
     }
+
     return(
       <React.StrictMode>
         <Wrapper>
             <Link to={`/`} style={{textDecoration: 'none'}}>
               <Logo src={logo} alt="Furniture Design" />
             </Link>
-            <Toggle onClick={()=>{
-              this.handleMask();
-            }}>
+            <Toggle onClick={()=>{ this.handleMask(); }}>
               <span id="top-bar" style={{backgroundColor: this.state.isMaskOpen ? '#fff' : '#242424'}}></span>
               <span id="bottom-bar" style={{backgroundColor: this.state.isMaskOpen ? '#fff' : '#242424'}}></span>
             </Toggle>
@@ -51,8 +50,6 @@ class Header extends React.Component {
     );
   }
 }
-
-
 
 const Wrapper = styled.header`
     height: 80px;
