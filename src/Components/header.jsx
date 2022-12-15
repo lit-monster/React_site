@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import logo from './Images/logo.svg';
-import { css } from "@emotion/react";
 
 class Header extends React.Component {
   constructor(props) {
@@ -43,8 +42,8 @@ class Header extends React.Component {
             <Toggle onClick={()=>{
               this.handleMask();
             }}>
-              <span id="top-bar" css={style}></span>
-              <span id="bottom-bar" css={style}></span>
+              <span id="top-bar" style={{backgroundColor: this.state.isMaskOpen ? '#fff' : '#242424'}}></span>
+              <span id="bottom-bar" style={{backgroundColor: this.state.isMaskOpen ? '#fff' : '#242424'}}></span>
             </Toggle>
             {MASK}
         </Wrapper>
@@ -53,9 +52,7 @@ class Header extends React.Component {
   }
 }
 
-const style = css`
-  backgroundColor: red;
-`;
+
 
 const Wrapper = styled.header`
     height: 80px;
